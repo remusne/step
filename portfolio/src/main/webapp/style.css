@@ -1,9 +1,40 @@
-#content {
-  margin-left: auto;
-  margin-right: auto;
-  width: 650px;
+.background {
+    background-image: url('https://images.wallpaperscraft.com/image/globe_map_earth_142119_3840x2400.jpg');
+    height: 100%;
+    background-size : cover;
 }
 
-#greeting-container {
-  margin-top: 20px;
+.name {
+    border-radius: 15px;
+    line-height: 60px;
+    color : #000066;
+}
+
+.button {
+    background-color: Transparent;
+    border: none;
+    color: #000066;
+    text-align: center;
+    font-size: 25px;
+    margin: 4px 3px;
+}
+
+#homeButton {
+    position: sticky;
+    float: right;
+}
+
+#aboutButton {
+    position: sticky;
+    float: right;
+}
+
+#projectsButton {
+    position: sticky;
+    float: right;
+}
+
+#contactButton {
+    position: sticky;
+    float: right;
 }
