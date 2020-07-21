@@ -26,3 +26,11 @@ function addRandomGreeting() {
   const greetingContainer = document.getElementById('greeting-container');
   greetingContainer.innerText = greeting;
 }
+
+function goToHomePage() {
+    location.href = "index.html";
+}
+
+function goToContactPage() {
+    location.href = "contact.html";
+}
