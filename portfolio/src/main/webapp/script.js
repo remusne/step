@@ -29,10 +29,10 @@ function addRandomGreeting() {
 
 /** Redirects to the "Home" page. */
 function goToHomePage() {
-    location.href = "index.html";
+    location.href = 'index.html';
 }
 
 /** Redirects to the "Contact" page. */
 function goToContactPage() {
-    location.href = "contact.html";
+    location.href = 'contact.html';
 }
