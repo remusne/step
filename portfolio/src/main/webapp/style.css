@@ -19,6 +19,13 @@
   color : #000066;
 }
 
+.projects {
+  margin: 0;
+  padding: 10% 0px 2% 50%;
+  color : #000066;
+  font-size: 50px;
+}
+
 h2 {
     margin: 0;
     padding: 0% 0px 0px 20%;
@@ -26,13 +33,17 @@ h2 {
     font-size:19px;
 }
 
-button {
-    position: sticky;
-    float: right;
+a {
     background-color: Transparent;
     border: none;
     color: #000066;
     text-align: center;
     font-size: 25px;
-    margin: 4px 3px;
+    margin: 4px 8px;
+    text-decoration: none;
+}
+
+.menu {
+    position: sticky;
+    float: right;
 }
