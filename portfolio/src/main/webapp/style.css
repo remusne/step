@@ -44,6 +44,13 @@
 
 .contact {
   margin: 0;
-  padding: 10% 0px 0px 20%;
+  padding: 10% 0px 2% 20%;
   color : #000066;
+}
+
+.contactData {
+    margin: 0;
+    padding: 0% 0px 0px 20%;
+    color: black;
+    font-size:19px;
 }
