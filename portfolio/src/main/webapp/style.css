@@ -7,7 +7,6 @@ html {
     height: 100%;
     background-size : cover;
 }
-
 .name {
     margin: 0;
     border-radius: 15px;
@@ -30,7 +29,6 @@ html {
     top: 20vh;
     left: 50vw;
     margin: 0;
-}
 
 h2 {
     margin: 0;
