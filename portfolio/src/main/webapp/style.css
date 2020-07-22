@@ -28,7 +28,6 @@ html {
     font-size: 50px;
     position: relative;
     top: 15vh;
-    /* left: 50%; */
     text-align: center;
     margin: 0;
 }
@@ -81,4 +80,45 @@ a {
     width: 100vw;
     height: 100vh;
     background-color: aqua;
+}
+
+.thumbnail {
+    background-color: red;
+    margin: 0;
+    background-size: contain;
+    width: 20vw;
+    position: relative;
+    display: inline-block;
+}
+
+#projectList {
+    position: relative;
+    top: 30vh;
+    text-align: center;
+    margin: 0;
+}
+
+img {
+    width: 160px;
+    height: 160px;
+    margin: 0;
+}
+
+.projectTitle {
+    margin: 0;
+    color:  #000066;;
+    font-size:30px;
+}
+
+thumbnail {
+    text-align: center;
+    margin: 0;
+    position: relative;
+}
+
+h3 {
+    margin: 0;
+    color: black;
+    font-size:20px;
+    text-align: center;
 }
