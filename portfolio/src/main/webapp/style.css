@@ -1,9 +1,38 @@
-#content {
-  margin-left: auto;
-  margin-right: auto;
-  width: 650px;
+.background {
+    background-image: url('homebackground.jpg');
+    height: 100%;
+    background-size : cover;
 }
 
-#greeting-container {
-  margin-top: 20px;
+.name {
+    margin: 0;
+    border-radius: 15px;
+    line-height: 60px;
+    color : #000066;
+    padding: 10% 0px 0px 20%;
+    font-size: 42px;
+}
+
+.contact {
+  margin: 0;
+  padding: 10% 0px 2% 20%;
+  color : #000066;
+}
+
+h2 {
+    margin: 0;
+    padding: 0% 0px 0px 20%;
+    color: black;
+    font-size:19px;
+}
+
+button {
+    position: sticky;
+    float: right;
+    background-color: Transparent;
+    border: none;
+    color: #000066;
+    text-align: center;
+    font-size: 25px;
+    margin: 4px 3px;
 }

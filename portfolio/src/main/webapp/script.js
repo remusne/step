@@ -26,3 +26,18 @@ function addRandomGreeting() {
   const greetingContainer = document.getElementById('greeting-container');
   greetingContainer.innerText = greeting;
 }
+
+// /** Redirects to the "Home" page. */
+// function goToHomePage() {
+//     location.href = 'index.html';
+// }
+
+// /** Redirects to the "Contact" page. */
+// function goToContactPage() {
+//     location.href = 'contact.html';
+// }
+
+// /** Redirects to the "Contact" page. */
+// function goToContactPage() {
+//     location.href = 'contact.html';
+// }
