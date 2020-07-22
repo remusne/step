@@ -27,8 +27,9 @@ html {
     color : #000066;
     font-size: 50px;
     position: relative;
-    top: 20vh;
-    left: 50vw;
+    top: 15vh;
+    /* left: 50%; */
+    text-align: center;
     margin: 0;
 }
 
