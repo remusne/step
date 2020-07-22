@@ -122,3 +122,32 @@ h3 {
     font-size:20px;
     text-align: center;
 }
+
+h4 {
+    font-size:30px;
+    position: relative;
+    left: 10vw;
+    margin-bottom: 50px;
+}
+
+ul {
+    font-size:25px;
+    position: relative;
+    left: 10vw;
+    margin-top: 50px;
+}
+
+.content {
+    position: relative;
+    top: 20vh;
+    vertical-align: middle;
+}
+
+.gitHub {
+    margin-top: 50px;
+    color:  #000066;;
+    text-decoration: none;
+    font-size:30px;
+    left: 10vw;
+    position: relative;
+}
