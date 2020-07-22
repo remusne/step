@@ -1,3 +1,7 @@
+html {
+    scroll-behavior: smooth;
+}
+
 .background {
     background-image: url('homebackground.jpg');
     height: 100%;
@@ -14,16 +18,17 @@
 }
 
 .contact {
-  margin: 0;
-  padding: 10% 0px 2% 20%;
-  color : #000066;
+    margin: 0;
+    padding: 10% 0px 2% 20%;
+    color : #000066;
 }
 
-.projects {
-  margin: 0;
-  padding: 10% 0px 2% 50%;
-  color : #000066;
-  font-size: 50px;
+.project {
+    color : #000066;
+    font-size: 50px;
+    position: relative;
+    top: 20vh;
+    left: 50vw;
 }
 
 h2 {
@@ -44,6 +49,34 @@ a {
 }
 
 .menu {
-    position: sticky;
+    position: fixed;
     float: right;
+    overflow: visible;
+    background-color: #fefbd8;
+    width: 102vw;
+    left: 0;
+    top: 0;
+}
+
+#dashboard {
+    width: 100vw;
+    height: 100vh;
+}
+
+#firstProject {
+    width: 100vw;
+    height: 100vh;
+    background-color: greenyellow;
+}
+
+#secondProject {
+    width: 100vw;
+    height: 100vh;
+    background-color: yellow;
+}
+
+#thirdProject {
+    width: 100vw;
+    height: 100vh;
+    background-color: aqua;
 }
