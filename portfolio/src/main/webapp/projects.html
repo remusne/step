@@ -9,23 +9,62 @@
   
   <body class="background">
     <div class="menu">  
-        <a href='index.html'><b>Home</b></a>
+        <a href="index.html"><b>Home</b></a>
         <a><b>About</b></a>
-        <a href='projects.html'><b>Projects</b></a>
-        <a href='contact.html'><b>Contact</b></a>
+        <a href="projects.html"><b>Projects</b></a>
+        <a href="contact.html"><b>Contact</b></a>
     </div>
 
     <section id="dashboard">
         <h1 class ="project">Projects</h1>
-        <a href="#firstProject">Go to first project</a>
-        <a href="#secondProject">Go to second project</a>
-        <a href="#thirdProject">Go to third project</a>
+
+        <div id="projectList">
+            <a href="#firstProject">
+                <div class="thumbnail"> 
+                    <img src="earth.png" alt="WWK logo">
+                    <h1 class="projectTitle">Worldwide Knowledge</h1>
+                    <h3>Technologies: Java, Android Studio<h3>
+                </div>
+            </a>
+
+            <a href="#secondProject">
+                <div class="thumbnail"> 
+                    <img src="car.jpg" alt="Car logo">
+                    <h1 class="projectTitle">Ride Sharing Service</h1>
+                    <h3>Technologies: C++, Linux CLI<h3>
+                </div>
+            </a>
+
+            <a href="#thirdProject">
+                <div class="thumbnail"> 
+                    <img class src="speed-o-meter.png" alt="Speed logo">
+                    <h1 class="projectTitle">Speed-o-Meter</h1>
+                    <h3>Technologies: C, Arduino<h3>
+                </div>
+            </a>
+        </div>
     </section>
    
     <section id="firstProject">
-        <h1 class ="project">WorldWide Knowledge</h1>
+        <h1 class ="project">Worldwide Knowledge</h1>
         <a href="#dashboard">Go back to dashboard</a>
         <a href="#secondProject">Go to next project</a>
+
+        <div class="content">
+            <h4><b>Description:</b></h4>
+            <ul>
+                <li>Android application used for improving geography knowledge
+                    (e.g. countries, capitals, flags).</li>
+                <li>Java implementation which retrieves data from restcountries.eu
+                    and stores it using Firebase.</li>
+                <li>The target market is represented by students from
+                    school/highschool, but it’s useful for everyone.</li>
+            </ul> 
+
+            <h4><b>Work Period:</b> August 2019 - Present</h4>
+
+            <a class="gitHub" href='https://github.com/RemusNeatu/WorldWideKnowledge'><b>GitHub Link</b></a>
+        </div>
     </section>
 
     <section id="secondProject">
@@ -33,12 +72,40 @@
         <a href="#dashboard">Go back to dashboard</a>
         <a href="#firstProject">Go to previous project</a>
         <a href="#thirdProject">Go to next project</a>
+
+        <div class="content">
+            <h4><b>Description:</b></h4>
+            <ul>
+                <li>Linux C++ application that assigns drivers for each client
+                    in a real time scenario, similar to Uber.</li>
+                <li>The algorithms minimize the average cost and duration for a ride.</li>
+            </ul>  
+
+            <h4><b>Work Period:</b> April 2019 - June 2019</h4>
+
+            <a class="gitHub" href='https://github.com/RemusNeatu/RideSharingService'><b>GitHub Link</b></a>
+        </div>
     </section>
     
     <section id="thirdProject">
         <h1 class ="project">Speed-o-Meter</h1>
         <a href="#dashboard">Go back to dashboard</a>
         <a href="#secondProject">Go to previous project</a>
+
+        <div class="content">
+            <div>
+                <h4><b>Description:</b></h4>
+                <ul>
+                    <li>Arduino-based project that measures the
+                        velocity using a Hall magnetic-sensor.</li>
+                    <li>Won the bronze medal at the UPB Science Fair 2019.</li>
+                </ul>
+            </div>
+
+            <h4><b>Work Period:</b> March 2019</h4>
+
+            <a class="gitHub" href='https://github.com/RemusNeatu'><b>GitHub Link</b></a>
+        </div>
     </section>
 
   </body>
