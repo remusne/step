@@ -27,17 +27,8 @@ function addRandomGreeting() {
   greetingContainer.innerText = greeting;
 }
 
-// /** Redirects to the "Home" page. */
-// function goToHomePage() {
-//     location.href = 'index.html';
-// }
-
-// /** Redirects to the "Contact" page. */
-// function goToContactPage() {
-//     location.href = 'contact.html';
-// }
-
-// /** Redirects to the "Contact" page. */
-// function goToContactPage() {
-//     location.href = 'contact.html';
-// }
+async function getDataText() {
+    const response = await fetch('/data');
+    const text = await response.text();
+    document.getElementById("dataText").innerText = text;
+}
