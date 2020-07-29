@@ -43,7 +43,7 @@ public class DataServlet extends HttpServlet {
         // TODO Add properties to the comments (besides text)
         Comment com = new Comment(text, "", "", "");        
         comments.add(com);
-        System.out.println(convertCommentToJson(com));
+
         // Redirect back to the HTML page.
         response.sendRedirect("/index.html");
     }
