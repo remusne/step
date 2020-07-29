@@ -39,7 +39,7 @@ async function updateCommentSection() {
     // Add every comment to the DOM
     var i, node, text;
     for (i = 0; i < comments.length; i++) {
-        node = document.createElement('LI');
+        node = document.createElement('li');
         text = document.createTextNode(comments[i]);
         node.appendChild(text);
         document.getElementById("commentSection").appendChild(node);

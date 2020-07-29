@@ -23,7 +23,6 @@ import javax.servlet.http.HttpServletResponse;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-// import com.google.sps.data.ServerStats;
 import com.google.gson.Gson;
 
 /** Servlet that handles comments data.*/
