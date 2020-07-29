@@ -27,8 +27,21 @@ function addRandomGreeting() {
   greetingContainer.innerText = greeting;
 }
 
-async function getDataText() {
+// Get all comments and print them on index.html
+async function updateCommentSection() {
     const response = await fetch('/data');
-    const text = await response.text();
-    document.getElementById("dataText").innerText = text;
+    var commentList = await response.text();
+    
+    // Split the comment list in comments
+    commentList = commentList.slice(1, -2);
+    let comments = commentList.split(", ");
+    
+    // Add every comment to the DOM
+    var i, node, text;
+    for (i = 0; i < comments.length; i++) {
+        node = document.createElement('LI');
+        text = document.createTextNode(comments[i]);
+        node.appendChild(text);
+        document.getElementById("commentSection").appendChild(node);
+    }
 }

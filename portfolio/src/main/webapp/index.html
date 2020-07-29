@@ -7,7 +7,7 @@
     <script src="script.js"></script>
   </head>
   
-  <body class="background">
+  <body class="background" onload="updateCommentSection()">
     <div class="menu">  
         <a href="index.html"><b>Home</b></a>
         <a><b>About</b></a>
@@ -15,10 +15,13 @@
         <a href="contact.html"><b>Contact</b></a>
     </div>
 
-    <h1 class ="name">Remus Mihai Neatu</h1>
+    <h1 class ="name">Remus Mihai Neatu</h1>    
 
-    <button onclick="getDataText()">Get data</button>
+    <form action="/index.html" method="POST">
+        <textarea name="comment">Write a comment here</textarea>
+        <input type="submit" />
+    </form>
 
-    <div id="dataText"></div>
+    <ul id="commentSection"></ul>
   </body>
 </html>

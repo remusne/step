@@ -20,13 +20,62 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-/** Servlet that returns some example content. TODO: modify this file to handle comments data */
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+// import com.google.sps.data.ServerStats;
+import com.google.gson.Gson;
+
+/** Servlet that handles comments data.*/
 @WebServlet("/data")
 public class DataServlet extends HttpServlet {
+    private ArrayList<String> comments;
+    static boolean initialized;
 
-  @Override
-  public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
-    response.setContentType("text/html;");
-    response.getWriter().println("Hello RemusN!");
-  }
+    static {
+        initialized = false;
+    }
+
+    // Populate the comment section in the beginning with hard coded values
+    private void initialize() {
+        if (!initialized) {
+            initialized = true;
+        } else {
+            return;
+        }
+
+        comments = new ArrayList<String>();
+        comments.add("Ana ");
+        comments.add("has ");
+        comments.add("app les.");
+    }
+
+    @Override
+    public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        // Check to see if the comments has been initialized already
+        initialize();
+        response.setContentType("text/html;");
+        response.getWriter().println(comments);
+    }
+
+    public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        // Get new comment and add it to the list
+        String text = getParameter(request, "text-input", "");
+        comments.add(text);
+
+        response.setContentType("text/html;");
+        response.getWriter().println(comments);
+    }
+
+    /**
+   * @return the request parameter, or the default value if the parameter
+   *         was not specified by the client
+   */
+    private String getParameter(HttpServletRequest request, String name, String defaultValue) {
+        String value = request.getParameter(name);
+        if (value == null) {
+            return defaultValue;
+        }
+        return value;
+    }
 }
