@@ -34,8 +34,6 @@ import com.google.appengine.api.datastore.Query.SortDirection;
 /** Servlet that handles comments data.*/
 @WebServlet("/data")
 public class DataServlet extends HttpServlet {
-    // private static ArrayList<Comment> comments = new ArrayList<Comment>();
-
     @Override
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
         Query query = new Query("Comment");
