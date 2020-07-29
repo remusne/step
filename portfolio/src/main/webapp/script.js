@@ -27,17 +27,19 @@ function addRandomGreeting() {
   greetingContainer.innerText = greeting;
 }
 
-// /** Redirects to the "Home" page. */
-// function goToHomePage() {
-//     location.href = 'index.html';
-// }
+/**
+ * Get all comments and print them on index.html
+ */
+async function updateCommentSection() {
+    const response = await fetch('/data');
+    const commentList = await response.json();
 
-// /** Redirects to the "Contact" page. */
-// function goToContactPage() {
-//     location.href = 'contact.html';
-// }
-
-// /** Redirects to the "Contact" page. */
-// function goToContactPage() {
-//     location.href = 'contact.html';
-// }
+    // Add every comment to the DOM
+    var i, node, text;
+    for (i = 0; i < commentList.length; i++) {
+        node = document.createElement('li');
+        text = document.createTextNode(commentList[i].text);
+        node.appendChild(text);
+        document.getElementById("commentSection").appendChild(node);
+    }
+}
