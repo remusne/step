@@ -60,7 +60,10 @@ public class DataServlet extends HttpServlet {
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
         // Get new comment and add it to the list
         String text = getParameter(request, "comment", "");
-        comments.add(text);
+        
+        // TODO Add properties to the comments (besides text)
+        Comment com = new Comment(text, "", "", "");        
+        comments.add(com.getText());
         response.setContentType("text/html;");
         response.getWriter().println(comments);
 
