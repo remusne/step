@@ -33,15 +33,12 @@ function addRandomGreeting() {
 async function updateCommentSection() {
     const response = await fetch('/data');
     const commentList = await response.json();
-    
-    // Get the comments from the JSON
-    const comments = await commentList.comments;
 
     // Add every comment to the DOM
     var i, node, text;
-    for (i = 0; i < comments.length; i++) {
+    for (i = 0; i < commentList.length; i++) {
         node = document.createElement('li');
-        text = document.createTextNode(comments[i].text);
+        text = document.createTextNode(commentList[i].text);
         node.appendChild(text);
         document.getElementById("commentSection").appendChild(node);
     }

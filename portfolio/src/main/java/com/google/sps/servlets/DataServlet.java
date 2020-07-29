@@ -32,7 +32,7 @@ public class DataServlet extends HttpServlet {
 
     @Override
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        response.setContentType("text/html;");
+        response.setContentType("text/json;");
         response.getWriter().println(buildJsonFromList(comments));
     }
 
@@ -43,44 +43,21 @@ public class DataServlet extends HttpServlet {
         // TODO Add properties to the comments (besides text)
         Comment com = new Comment(text, "", "", "");        
         comments.add(com);
-
-        response.setContentType("text/html;");
-        response.getWriter().println(buildJsonFromList(comments));
-
+        System.out.println(convertCommentToJson(com));
         // Redirect back to the HTML page.
         response.sendRedirect("/index.html");
     }
 
     // Converts a Comment object into a JSON
     private String convertCommentToJson(Comment comment) {
-        String json = "{";
-        json += "\"text\": ";
-        json += "\"" + comment.getText() + "\"";
-        json += ", ";
-        json += "\"time\": ";
-        json += "\"" + comment.getTime() + "\"";
-        json += ", ";
-        json += "\"date\": ";
-        json += "\"" + comment.getDate() + "\"";
-        json += ", ";
-        json += "\"user\": ";
-        json += "\"" + comment.getUser() + "\"";
-        json += "}";
-        return json;
+        Gson gson = new Gson(); 
+        return gson.toJson(comment);
     }
 
     // Converts an array of Comment objects to a JSON array
     private String buildJsonFromList(final ArrayList<Comment> list) {
-        String json = "{\"comments\": [";
-        for (Comment element : list) {
-            json += convertCommentToJson(element) + ", ";
-        }
-
-        // Delete the last ", " 
-        json = json.substring(0, json.length() - 2);
-        json += "]}";
-
-        return json;
+        Gson gson = new Gson(); 
+        return gson.toJson(list);
     }
 
     /**
