@@ -28,33 +28,12 @@ import com.google.gson.Gson;
 /** Servlet that handles comments data.*/
 @WebServlet("/data")
 public class DataServlet extends HttpServlet {
-    private ArrayList<String> comments;
-    static boolean initialized;
-
-    static {
-        initialized = false;
-    }
-
-    // Populate the comment section in the beginning with hard coded values
-    private void initialize() {
-        if (!initialized) {
-            initialized = true;
-        } else {
-            return;
-        }
-
-        comments = new ArrayList<String>();
-        comments.add("Ana ");
-        comments.add("has ");
-        comments.add("app les.");
-    }
+    private static ArrayList<Comment> comments = new ArrayList<Comment>();
 
     @Override
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        // Check to see if the comments has been initialized already
-        initialize();
         response.setContentType("text/html;");
-        response.getWriter().println(comments);
+        response.getWriter().println(buildJsonFromList(comments));
     }
 
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
@@ -63,12 +42,45 @@ public class DataServlet extends HttpServlet {
         
         // TODO Add properties to the comments (besides text)
         Comment com = new Comment(text, "", "", "");        
-        comments.add(com.getText());
+        comments.add(com);
+
         response.setContentType("text/html;");
-        response.getWriter().println(comments);
+        response.getWriter().println(buildJsonFromList(comments));
 
         // Redirect back to the HTML page.
         response.sendRedirect("/index.html");
+    }
+
+    // Converts a Comment object into a JSON
+    private String convertCommentToJson(Comment comment) {
+        String json = "{";
+        json += "\"text\": ";
+        json += "\"" + comment.getText() + "\"";
+        json += ", ";
+        json += "\"time\": ";
+        json += "\"" + comment.getTime() + "\"";
+        json += ", ";
+        json += "\"date\": ";
+        json += "\"" + comment.getDate() + "\"";
+        json += ", ";
+        json += "\"user\": ";
+        json += "\"" + comment.getUser() + "\"";
+        json += "}";
+        return json;
+    }
+
+    // Converts an array of Comment objects to a JSON array
+    private String buildJsonFromList(final ArrayList<Comment> list) {
+        String json = "{\"comments\": [";
+        for (Comment element : list) {
+            json += convertCommentToJson(element) + ", ";
+        }
+
+        // Delete the last ", " 
+        json = json.substring(0, json.length() - 2);
+        json += "]}";
+
+        return json;
     }
 
     /**
