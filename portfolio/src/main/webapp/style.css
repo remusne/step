@@ -151,3 +151,33 @@ ul {
     left: 10vw;
     position: relative;
 }
+
+#commentSection {
+    background-color: white;
+    list-style: none;
+    padding: 0;
+    word-wrap: break-word;
+    overflow: scroll;
+    height: 40vh;
+    width: 55vw;
+}
+
+#commentSection li {
+    margin : 10px;
+    word-break: break-all;
+    background-color: #f0efef;
+}
+
+input {
+    background-color: blue;
+    color: white;
+    font-weight: bold;
+    font-size: 120%;
+    width: 5vw;
+    height: 4vh;
+}
+
+textarea {
+    height: 10vh;
+    width: 20vw;
+}
