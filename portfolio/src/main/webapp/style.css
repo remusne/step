@@ -154,11 +154,15 @@ ul {
 
 #commentSection {
     background-color: white;
-    display: inline-block;
     list-style: none;
     padding: 0;
+    word-wrap: break-word;
+    overflow: scroll;
+    height: 40vh;
+    width: 55vw;
 }
 
 #commentSection li{
-    margin : 5px;
+    margin : 10px;
+    word-break: break-all;
 }
