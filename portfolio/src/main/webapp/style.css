@@ -151,3 +151,14 @@ ul {
     left: 10vw;
     position: relative;
 }
+
+#commentSection {
+    background-color: white;
+    display: inline-block;
+    list-style: none;
+    padding: 0;
+}
+
+#commentSection li{
+    margin : 5px;
+}
