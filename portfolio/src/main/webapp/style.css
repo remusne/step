@@ -166,3 +166,17 @@ ul {
     margin : 10px;
     word-break: break-all;
 }
+
+input {
+    background-color: blue;
+    color: white;
+    font-weight: bold;
+    font-size: 120%;
+    width: 5vw;
+    height: 4vh;
+}
+
+textarea {
+    height: 10vh;
+    width: 20vw;
+}
