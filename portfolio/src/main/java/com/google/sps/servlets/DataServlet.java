@@ -42,7 +42,7 @@ public class DataServlet extends HttpServlet {
         DatastoreService datastore = DatastoreServiceFactory.getDatastoreService();
         PreparedQuery results = datastore.prepare(query);
         
-        // Add every comment existent to the comment list
+        // Add every comment to the comment list
         ArrayList<Comment> comments = new ArrayList<Comment>();
         for (Entity commentEntity : results.asIterable()) {
             String text = (String) commentEntity.getProperty("text");
