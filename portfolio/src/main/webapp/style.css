@@ -162,9 +162,10 @@ ul {
     width: 55vw;
 }
 
-#commentSection li{
+#commentSection li {
     margin : 10px;
     word-break: break-all;
+    background-color: #f0efef;
 }
 
 input {
