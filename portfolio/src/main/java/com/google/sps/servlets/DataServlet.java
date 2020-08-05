@@ -56,10 +56,9 @@ public class DataServlet extends HttpServlet {
         for (Entity commentEntity : results.asIterable()) {
             String text = (String) commentEntity.getProperty("text");
             String time = (String) commentEntity.getProperty("time");
-            String date = (String) commentEntity.getProperty("date");
             String user = (String) commentEntity.getProperty("user");
 
-            comments.add(new Comment(text, time, date, user));
+            comments.add(new Comment(text, time, user));
         }
 
         // Print all the comments stored in DataStore
@@ -79,7 +78,7 @@ public class DataServlet extends HttpServlet {
         String time = convertTimeStampToTimeString(timestamp);
         
         // Add new comment to data base
-        Comment com = new Comment(text, time, "", "");        
+        Comment com = new Comment(text, time, "");        
         storeData(com, datastore);
 
         // Redirect back to the HTML page.
@@ -92,7 +91,6 @@ public class DataServlet extends HttpServlet {
 
         commentEntity.setProperty("text", comment.getText());
         commentEntity.setProperty("time", comment.getTime());
-        commentEntity.setProperty("date", comment.getDate());
         commentEntity.setProperty("user", comment.getUser());
 
         datastore.put(commentEntity);
