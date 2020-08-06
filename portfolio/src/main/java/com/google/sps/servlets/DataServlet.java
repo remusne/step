@@ -31,14 +31,8 @@ import com.google.appengine.api.datastore.PreparedQuery;
 import com.google.appengine.api.datastore.Query;
 import com.google.appengine.api.datastore.Query.SortDirection;
 
-import java.util.Date;
 import java.time.LocalDateTime;
-import java.sql.Timestamp;
-import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;
-import java.util.Calendar;
-import java.util.TimeZone;
-import java.util.*;
 
 /** Servlet that handles comments data.*/
 @WebServlet("/data")
@@ -74,8 +68,7 @@ public class DataServlet extends HttpServlet {
         String text = getParameter(request, "comment", "");
 
         // Assign current time as the comment's time
-        Timestamp timestamp = new Timestamp(System.currentTimeMillis());
-        String time = convertTimeStampToTimeString(timestamp);
+        String time = getCurrentTime();
         
         // Add new comment to data base
         Comment com = new Comment(text, time, "");        
@@ -109,8 +102,8 @@ public class DataServlet extends HttpServlet {
     }
 
     // Converts a date in Timestamp format to a date in String format
-    String convertTimeStampToTimeString(Timestamp timestamp) {
-        LocalDateTime ldt = timestamp.toLocalDateTime();
+    String getCurrentTime() {
+        LocalDateTime ldt = LocalDateTime.now();
         return ldt.format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"));
     }
 
