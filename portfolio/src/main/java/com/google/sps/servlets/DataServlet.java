@@ -31,6 +31,9 @@ import com.google.appengine.api.datastore.PreparedQuery;
 import com.google.appengine.api.datastore.Query;
 import com.google.appengine.api.datastore.Query.SortDirection;
 
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+
 /** Servlet that handles comments data.*/
 @WebServlet("/data")
 public class DataServlet extends HttpServlet {
@@ -47,10 +50,9 @@ public class DataServlet extends HttpServlet {
         for (Entity commentEntity : results.asIterable()) {
             String text = (String) commentEntity.getProperty("text");
             String time = (String) commentEntity.getProperty("time");
-            String date = (String) commentEntity.getProperty("date");
             String user = (String) commentEntity.getProperty("user");
 
-            comments.add(new Comment(text, time, date, user));
+            comments.add(new Comment(text, time, user));
         }
 
         // Print all the comments stored in DataStore
@@ -64,9 +66,12 @@ public class DataServlet extends HttpServlet {
         
         // Get new comment and add it to the list
         String text = getParameter(request, "comment", "");
+
+        // Assign current time as the comment's time
+        String time = getCurrentTime();
         
         // Add new comment to data base
-        Comment com = new Comment(text, "", "", "");        
+        Comment com = new Comment(text, time, "");        
         storeData(com, datastore);
 
         // Redirect back to the HTML page.
@@ -79,7 +84,6 @@ public class DataServlet extends HttpServlet {
 
         commentEntity.setProperty("text", comment.getText());
         commentEntity.setProperty("time", comment.getTime());
-        commentEntity.setProperty("date", comment.getDate());
         commentEntity.setProperty("user", comment.getUser());
 
         datastore.put(commentEntity);
@@ -95,6 +99,12 @@ public class DataServlet extends HttpServlet {
     private String buildJsonFromList(final ArrayList<Comment> list) {
         Gson gson = new Gson(); 
         return gson.toJson(list);
+    }
+
+    // Converts a date in Timestamp format to a date in String format
+    String getCurrentTime() {
+        LocalDateTime ldt = LocalDateTime.now();
+        return ldt.format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"));
     }
 
     /**

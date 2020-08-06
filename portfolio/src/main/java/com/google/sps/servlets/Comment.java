@@ -18,14 +18,12 @@ package com.google.sps.servlets;
 public class Comment {
     private String text;
     private String time;
-    private String date;
     private String user;
 
     // Constructor
-    Comment(final String text, final String time, final String date, final String user) {
+    Comment(final String text, final String time, final String user) {
         this.text = text;
         this.time = time;
-        this.date = date;
         this.user = user;
     }
 
@@ -44,14 +42,6 @@ public class Comment {
 
     public void setTime(final String time) {
         this.time = time;
-    }
-
-    public String getDate() {
-        return date;
-    }
-
-    public void setDate(final String date) {
-        this.date = date;
     }
 
     public String getUser() {
